@@ -1,0 +1,94 @@
+<form bindsubmit="formSubmit">
+  <view style="padding: 30rpx;">
+    <view class="weui-cells weui-cells_after-title m-t-20">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">真实姓名</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" name="name" placeholder="请输入姓名" bindinput="input" value="{{list.realName}}" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">手机号</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" name="phone1" placeholder="请输入手机号（可选）" bindinput="input" value="{{list.phone1}}"  />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">公司</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" name="company" placeholder="请输入公司" bindinput="input" value="{{list.company}}" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">职位</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" name="zw" placeholder="请输入职位（可选）" bindinput="input" value="{{list.zw}}" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_select">
+        <view class="weui-cell__hd weui-cell__hd_in-select-after">
+          <view class="weui-label">入学年份</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker mode="date" value="{{year}}" fields="year" bindchange="bindDateChange">
+            <view class="weui-select weui-select_in-select-after">{{year}}</view>
+          </picker>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">院系专业</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" name="college" placeholder="请输入院系专业" bindinput="input" value="{{list.college}}" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_select">
+        <view class="weui-cell__hd weui-cell__hd_in-select-after">
+          <view class="weui-label">最高学历</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker bindchange="bindEduChange" value="{{eduDetail}}" range="{{edu}}">
+            <view class="weui-select weui-select_in-select-after">{{eduDetail}}</view>
+          </picker>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">邮箱</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" name="mail" placeholder="邮箱（可选）" bindinput="input" value="{{list.mail}}" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">常驻地</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" name="czd" placeholder="常驻地（可选）" bindinput="input" value="{{list.czd}}" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">家乡</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" name="jx" placeholder="家乡（可选）" bindinput="input" value="{{list.jx}}" />
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="main-button">
+    <button type="primary" formType="submit" disabled="{{dis}}">保存</button>
+  </view>
+  <view class="info_ts">信息越完善，越有助于您进行对接</view>
+</form>

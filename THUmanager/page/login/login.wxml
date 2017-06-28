@@ -1,0 +1,25 @@
+<form bindsubmit="login">
+  <view class="weui-cells weui-cells_after-title  m-t-20">
+    <view class="weui-cell weui-cell_input" style="line-height:120rpx;font-size:36rpx;">
+      <view class="weui-cell__hd">
+        <view class="weui-label">手机号</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="请输入手机号" name="username" />
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input" style="line-height:120rpx;font-size:36rpx;">
+      <view class="weui-cell__hd">
+        <view class="weui-label">密码</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="请输入密码" password="true" name="paswd" />
+      </view>
+    </view>
+  </view>
+   <navigator url="../login/forget" style="text-align:right;" hover-class="navigator-hover">忘记密码？</navigator>
+  <view style="margin-top:26rpx">
+    <button style="width:44%;margin-left:3%;line-height:100rpx;font-size:40rpx;" size="mini" type="warn" class="main-color f-z-30" bindtap="register">注册</button>
+    <button style="width:44%;margin-left:3%;line-height:100rpx;font-size:40rpx;" size="mini" type="primary" class="main-color" formType="submit">登录</button>
+  </view>
+</form>

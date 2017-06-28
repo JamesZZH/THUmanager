@@ -1,0 +1,19 @@
+<template name="label">
+  <block wx:for="{{item.label}}">
+    <view class="label-view">{{item}}</view>
+  </block>
+  <view class="label-view-show" wx:if="{{item.label.length > 3}}">···</view>
+</template>
+<template name="detailLabel">
+  <block wx:for="{{list.label}}">
+    <view class="label-view-show">{{item}}</view>
+  </block>
+</template>
+<template name="detailComment">
+  <block wx:for="{{list.comment}}">
+    <view class="weui-form-preview__item contact-line lineheight80">
+      <view class="weui-form-preview__label padding160">{{item.name}}：</view>
+      <view class="weui-form-preview__value word-break padding160">{{item.content}}</view>
+    </view>
+  </block>
+</template>

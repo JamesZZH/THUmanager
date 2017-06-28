@@ -1,0 +1,158 @@
+<form bindsubmit="formSubmit">
+  <view style="padding: 30rpx;">
+    <view style="margin-top:30rpx;" class="main-button {{step==2?'block':'hidden'}}" bindtap="stepLast">
+      <button type="default" class="main-color">上一步</button>
+    </view>
+    <view class="weui-cells weui-cells_after-title m-t-20">
+      <view class="{{step=='1'?'block':'hidden'}}">
+        <view class="weui-cell weui-cell_input weui-cell_vcode">
+          <view class="weui-cell__hd">
+            <view class="weui-label">手机号</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" name="phone" placeholder="请输入手机号" type="number" bindinput="phone1" />
+          </view>
+          <view class="weui-cell__ft">
+            <view class="weui-vcode-btn {{code_tips=='已发送'?'color_bbb':''}}" bindtap="getVcode">{{code_tips}}</view>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">密码</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" name="psw" placeholder="密码最短6位" bindinput="input" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">验证码</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" name="vcode" placeholder="请输入验证码" bindinput="input" type="number" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">推荐人</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" name="invite" placeholder="请输入推荐人(真实全名)" bindinput="input" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">推荐人院系</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" name="invite_college" placeholder="请输入推荐人院系" bindinput="input" />
+          </view>
+        </view>
+      </view>
+      <view class="{{step=='2'?'block':'hidden'}}">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">真实姓名</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" name="name" placeholder="请输入姓名" bindinput="input" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">手机号</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" name="phone1" placeholder="请输入手机号（可选）" bindinput="input" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">公司</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" name="company" placeholder="请输入公司" bindinput="input" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">职位</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" name="zw" placeholder="请输入职位（可选）" bindinput="input" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_select">
+          <view class="weui-cell__hd weui-cell__hd_in-select-after">
+            <view class="weui-label">入学年份</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker mode="date" start='1911' end="2100" value="{{date}}" fields="year" bindchange="bindDateChange">
+              <view class="weui-select weui-select_in-select-after">{{date}}</view>
+            </picker>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">院系专业</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" name="college" placeholder="请输入院系专业" bindinput="input" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_select">
+          <view class="weui-cell__hd weui-cell__hd_in-select-after">
+            <view class="weui-label">最高学历</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker bindchange="bindEduChange" value="{{eduDetail}}" range="{{edu}}">
+              <view class="weui-select weui-select_in-select-after">{{eduDetail}}</view>
+            </picker>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">邮箱</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" name="mail" placeholder="邮箱（可选）" bindinput="input" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">常驻地</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" name="czd" placeholder="常驻地（可选）" bindinput="input" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">家乡</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" name="jx" placeholder="家乡（可选）" bindinput="input" />
+          </view>
+        </view>
+
+        <!--<checkbox-group bindchange="bindAgreeChange" class="agree-paper">
+        <label class="weui-agree" for="weuiAgree">
+          <view class="weui-agree__text">
+            <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
+            <view class="weui-agree__checkbox-icon">
+              <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="9" wx:if="{{isAgree}}"></icon>
+            </view>
+            阅读并同意
+            <navigator url="" class="weui-agree__link">《相关条款》</navigator>
+          </view>
+        </label>
+      </checkbox-group>-->
+      </view>
+    </view>
+    <button style="margin-top:30rpx;" class="main-button main-color {{step==1?'block':'hidden'}}" formType="submit" type="default">下一步</button>
+    <view style="margin-top:30rpx;" class="main-button {{step==2?'block':'hidden'}}">
+      <button type="default" class="main-color" formType="submit">注册</button>
+    </view>
+    <view class="info_ts">信息越完善，越有助于您进行对接</view>
+  </view>
+</form>

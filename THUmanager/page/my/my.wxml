@@ -1,0 +1,44 @@
+<view class="weui-cells weui-cells_after-title m-t-20" wx:if="{{phone=='1'}}">
+  <view bindtap="goLogin" class="weui-cell weui-cell_access" style="line-height:120rpx;font-size:36rpx;" hover-class="weui-cell_active">
+    <view class="weui-cell__bd">
+      <image style="vertical-align:middle;" src="../../images/phone.png" class="collection-pic"></image>
+      手机号</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access">{{phone=='1'?'未登录':phone}}</view>
+  </view>
+</view>
+<view wx:else>
+  <view class="app">
+    <view class="ele-container">
+      <image class="show-bac" src="../../images/yun.jpg"></image>
+      <view class="user-center usercenter-mode1 background-ele with-horizontal-view show-logo">
+        <view class="show-view">
+          <image class="cover-thumb" src="{{list.userInfo.avatarUrl}}"></image>
+          <view class="nickname">{{list.userInfo.nickName}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+    <view data-index="{{list.id}}" bindtap="goSetting" class="weui-cell weui-cell_access" hover-class="weui-cell_active" style="height:100rpx;">
+      <view class="weui-cell__hd">
+        <image src="../../images/setting.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+      </view>
+      <view class="weui-cell__bd">设置</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access">个人信息</view>
+    </view>
+    <navigator url="../collection/collection" class="weui-cell weui-cell_access" style="line-height:120rpx;font-size:36rpx;" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+        <image src="../../images/selected-collection.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+      </view>
+      <view class="weui-cell__bd">我的收藏</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access">查看</view>
+    </navigator>
+    <view bindtap="logout" class="weui-cell weui-cell_access" hover-class="weui-cell_active" style="height:100rpx;">
+      <view class="weui-cell__hd">
+        <image src="../../images/logout.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+      </view>
+      <view class="weui-cell__bd">退出登录</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access">退出</view>
+    </view>
+  </view>
+</view>

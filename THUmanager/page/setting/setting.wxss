@@ -1,0 +1,30 @@
+/* page/setting/setting.wxss */
+
+.main-button {
+  margin: 10rpx 30rpx;
+}
+
+.main-color {
+  color: #fff;
+  background-color: #5c307d;
+}
+
+.m-t-20 {
+  margin-top: 20rpx;
+}
+
+Page {
+  background: #ddd;
+}
+
+.block {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.agree-paper {
+  border-top: 1rpx solid #d9d9d9;
+}

@@ -1,0 +1,100 @@
+.container {
+  padding: 0 24rpx;
+  background: #fff;
+  height: 100%;
+}
+
+.title {
+  font-weight: 400;
+  font-size: 17px;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.list-label {
+  line-height: 1.8 !important;
+  font-size: 13px !important;
+  color: black !important;
+  margin-right: 10rpx;
+}
+
+.break-line {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.main-body {
+  padding: 30rpx 0;
+}
+
+.contact {
+  -webkit-box-pack: justify;
+  box-pack: justify;
+  display: -webkit-box;
+  display: box;
+}
+
+.contact-line {
+  border-bottom: 1px solid #ddd;
+}
+
+.reply {
+  margin-top: 20rpx;
+  background: #fff;
+}
+
+.pd-24 {
+  padding: 0 24rpx;
+}
+
+.reply-detail {
+  display: -webkit-box;
+  display: box;
+  word-wrap: break-word;
+}
+
+.word-break {
+  word-break: break-all;
+}
+
+.lineheight80 {
+  line-height: 100rpx;
+}
+
+.padding160 {
+  padding: 16rpx 0;
+}
+
+.commentPic {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.comment-color {
+  color: rgb(103, 132, 168);
+}
+
+.hidden {
+  display: none;
+}
+
+.like {
+  height: 40rpx;
+  width: 40rpx;
+  padding:30rpx 10rpx;
+}
+
+.like-row {
+  display: flex;
+}
+
+.like-label {
+  -webkit-box-pack: justify;
+  box-pack: justify;
+  display: -webkit-box;
+  display: box;
+}
+
+.pd-12 {
+  padding:12rpx;
+}

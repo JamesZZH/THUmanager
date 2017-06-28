@@ -1,0 +1,111 @@
+.container {
+  padding: 0 24rpx;
+  background: #fff;
+  height: 100%;
+}
+
+.title {
+  font-weight: 400;
+  font-size: 40rpx;
+  /*margin-top: 10rpx;*/
+}
+
+.fz-40 {
+  font-size: 40rpx;
+}
+
+.list-label {
+  line-height: 1.8 !important;
+  font-size: 13px !important;
+  color: black !important;
+  margin-right: 10rpx;
+}
+
+.break-line {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.main-body {
+  padding: 30rpx 0;
+}
+
+.contact {
+  -webkit-box-pack: justify;
+  box-pack: justify;
+  display: -webkit-box;
+  display: box;
+}
+
+.contact-line {
+  border-bottom: 1px solid #ddd;
+}
+
+.reply {
+  margin-top: 20rpx;
+  background: #fff;
+}
+
+.pd-24 {
+  padding: 0 24rpx;
+}
+
+.reply-detail {
+  display: -webkit-box;
+  display: box;
+  word-wrap: break-word;
+}
+
+.word-break {
+  word-break: break-all;
+}
+
+.lineheight80 {
+  line-height: 100rpx;
+}
+
+.padding160 {
+  padding: 16rpx 0;
+}
+
+.commentPic {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.comment-color {
+  color: rgb(103, 132, 168);
+}
+
+.hidden {
+  display: none;
+}
+
+.recruit-title {
+  -webkit-box-pack: justify;
+  box-pack: justify;
+  display: -webkit-box;
+  display: box;
+}
+
+.w75 {
+  width: 75%;
+}
+
+.salary {
+  font-size: 40rpx;
+  color: #5c307d;
+}
+
+.m-t-0 {
+  margin-top: 0rpx;
+}
+
+.company {
+  margin-bottom: 15rpx;
+  font-size: 30rpx;
+}
+
+.header {
+  margin-top: 10rpx;
+}

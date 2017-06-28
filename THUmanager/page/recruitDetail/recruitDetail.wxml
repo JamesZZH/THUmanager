@@ -1,0 +1,53 @@
+<import src="../template/template.wxml" />
+<import src="../../wxParse/wxParse.wxml" />
+<view style="padding: 20rpx;">
+  <view class="container" style="border:1px solid #5c307d;padding: 20rpx;">
+    <view class="header break-line">
+      <view class="recruit-title title">
+        <view class="weui-media-box__title w75 fz-40">{{list.title}}</view>
+        <view class="salary">{{list.salary}}</view>
+      </view>
+      <view class="company">{{list.company}}</view>
+      <view class="weui-media-box__info m-t-0">
+        <view class="weui-media-box__info__meta">{{list.place}}</view>
+        <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{list.exp}}</view>
+        <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{list.edu}}</view>
+        <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{list.sex}}</view>
+        <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{list.age}}</view>
+      </view>
+    </view>
+    <view class="main-body break-line">
+      <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+    </view>
+    <view class="contact contact-line lineheight80">
+      <view>联系人：</view>
+      <view wx:if="{{contactVisible=='0'}}">账号审核异常</view>
+      <view wx:if="{{contactVisible=='1'}}">账号审核中</view>
+      <view wx:if="{{contactVisible=='2'}}">{{list.contact.contactName}}</view>
+      <view wx:if="{{contactVisible=='3'}}" bindtap="{{contactVisible=='3'?'goLogin':''}}">点击登录查看</view>
+    </view>
+    <view class="contact contact-line-h lineheight80">
+      <view>联系方式：</view>
+      <view wx:if="{{contactVisible=='0'}}">账号审核异常</view>
+      <view wx:if="{{contactVisible=='1'}}">账号审核中</view>
+      <view wx:if="{{contactVisible=='2'}}">{{list.contact.contactPhone}}</view>
+      <view wx:if="{{contactVisible=='3'}}" bindtap="{{contactVisible=='3'?'goLogin':''}}">点击登录查看</view>
+    </view>
+  </view>
+</view>
+<view style="padding: 20rpx;">
+  <view class="reply contact-line" style="border:1px solid #5c307d;padding: 20rpx;">
+    <view class="contact lineheight80">
+      <view>留言</view>
+      <view class="comment-color {{contactVisible=='2'?'':'hidden'}}" bindtap="goComment">
+        写留言
+        <image class="commentPic" src="../../images/pen.png"></image>
+      </view>
+    </view>
+    <view class="reply-detail {{contactVisible=='3'?'hidden':''}}">
+      <view class="weui-form-preview">
+        <template is="detailComment" data="{{list}}" />
+      </view>
+    </view>
+  </view>
+</view>

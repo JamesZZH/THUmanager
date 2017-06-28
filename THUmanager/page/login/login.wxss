@@ -1,0 +1,30 @@
+Page {
+  background: #ddd;
+}
+
+.m-t-20 {
+  margin-top: 200rpx;
+}
+
+.main-button {
+  margin: 10rpx 30rpx;
+}
+
+.main-color {
+  color: #fff;
+  background-color: #5c307d;
+}
+
+.register {
+  padding: 0 30rpx;
+  -webkit-box-pack: justify;
+  box-pack: justify;
+  display: -webkit-box;
+  display: box;
+}
+.register-color{
+  color: #5c307d;
+}
+.f-z-30{
+  font-size: 30rpx;
+}

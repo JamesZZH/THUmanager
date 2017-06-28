@@ -1,0 +1,138 @@
+<import src="../template/template.wxml" />
+<view class="top">
+  <scroll-view scroll-x="true" class="xscroll_bar">
+    <view class="menu_item {{index==activeIndex?'active':''}}" style="width:{{itemWidth}};line-height:100rpx;" wx:for="{{menus}}" bindtap="tabChange" data-index="{{index}}">
+      <view class="{{!(index==0 || index-1==activeIndex || index==activeIndex)?'menu_item_border':''}}">
+        <image class="menu-pic" src="{{item.pic}}" style="vertical-align:middle;"></image>
+        {{item.menu}}
+      </view>
+    </view>
+  </scroll-view>
+  <view style="height:110rpx">
+    <view class="screen-pic">
+      <image src="../../images/screen.png" bindtap="buttonChange" style="width:50rpx;height:50rpx;padding:22rpx 16rpx;"></image>
+    </view>
+    <view class="weui-search-bar" style="width:668rpx;height:94rpx;float:right">
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+          <input type="text" confirm-type='search' class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputT" bindconfirm="inputTyping" />
+          <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+            <icon type="clear" size="14"></icon>
+          </view>
+        </view>
+        <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+          <view class="classname">
+            <icon class="weui-icon-search" type="search" size="14" style="margin-left: -100rpx;"></icon>
+            <view class="weui-search-bar__text" style="height:52rpx;line-height:52rpx;">搜索</view>
+          </view>
+        </label>
+      </view>
+      <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+    </view>
+  </view>
+  <view class="listFilterCon {{search=='1'?'block':''}}" style="width:750rpx;">
+    <view id="placeCon" class="con">
+      <block wx:for="{{newlist}}">
+        <view class="weui-media-box weui-media-box_text pb-10" style="padding:8px;" bindtap="goDetail" data-id="{{item.detailId}}" data-tid="{{item.id}}">
+          <view style="border:1px solid #5c307d;margin-top:10rpx;padding:8px;">
+            <view class="weui-media-box__title weui-media-box__title_in-text">{{item.title}}</view>
+            <view class="weui-media-box__info">
+              <view class="weui-media-box__info__meta">{{item.place}}</view>
+              <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{item.amount}}</view>
+              <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{item.cycle}}</view>
+            </view>
+            <view>
+              <template is="label" data="{{item}}" />
+            </view>
+            <view class="break-line"></view>
+            <view class="inline">
+              <image src="../../images/clock.png" class="time vertical-middle"></image>
+              <view class="inline fz-24 vertical-middle">{{item.time}}</view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view style="height:250rpx;width:100%;" bindtap="hidePick"></view>
+  </view>
+  <view class="listFilterCon {{classname=='1'?'block':''}}">
+    <view id="placeCon" class="con">
+      <view class="place_1 place_con">
+        <view class="ul">
+          <block wx:for="{{pick1}}">
+            <view class="li {{activepick1==index?'active':''}}" data-name="{{item.name}}" data-index="{{index}}" bindtap="pick1">{{item.name}}</view>
+          </block>
+        </view>
+      </view>
+      <view id="subway_list" class="place_2 place_con">
+        <view class="ul">
+          <block wx:for="{{pick2}}">
+            <view class="li {{activepick2==index?'active':''}}" data-name="{{item.name}}" data-index="{{index}}" bindtap="pick2">{{item.name}}</view>
+          </block>
+        </view>
+      </view>
+      <view id="place_3" class="place_3 place_con {{act3=='1'?'block':''}}">
+        <view class="ul">
+          <block wx:for="{{pick3}}">
+            <view class="li {{activepick3==index?'active':''}}" data-name="{{item.name}}" data-index="{{index}}" bindtap="pick3">{{item.name}}</view>
+          </block>
+        </view>
+      </view>
+    </view>
+    <view style="height:250rpx;width:100%;" bindtap="hidePick"></view>
+  </view>
+  <view class="height-120 recommend-title {{dis=='1'?'hidden':''}}" style="margin-top:10rpx;padding:0 40px;">
+    <view bindtap="goShop" class="shop-border">
+      {{buttonTxt}}
+    </view>
+  </view>
+</view>
+<view style="{{dis=='1'?'padding-top:194rpx;':'padding-top:270rpx;'}}">
+  <view class="weui-panel">
+    <scroll-view scroll-y="true" style="height: {{deviceHeight-105}}px;" class="weui-panel__bd {{activeIndex=='0'?'block':'hidden'}}" bindscrolltolower="projectMore">
+      <block wx:for="{{project}}">
+        <view class="weui-media-box weui-media-box_text pb-10" style="padding:8px;" bindtap="goDetail" data-id="{{item.detailId}}" data-tid="{{item.objectId}}">
+          <view style="border:1px solid #5c307d;margin-top:10rpx;padding:8px;">
+            <view class="weui-media-box__title weui-media-box__title_in-text">{{item.title}}</view>
+            <view class="weui-media-box__info">
+              <view class="weui-media-box__info__meta">{{item.place}}</view>
+              <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{item.amount}}</view>
+              <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{item.cycle}}</view>
+            </view>
+            <view>
+              <template is="label" data="{{item}}" />
+            </view>
+            <view class="break-line"></view>
+            <view class="inline">
+              <image src="../../images/clock.png" class="time vertical-middle"></image>
+              <view class="inline fz-24 vertical-middle">{{item.time}}</view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+    <scroll-view scroll-y="true" style="height: {{deviceHeight-105}}px;" class="weui-panel__bd {{activeIndex=='1'?'block':'hidden'}}" bindscrolltolower="capitalMore">
+      <block wx:for="{{capital}}">
+        <view class="weui-media-box weui-media-box_text pb-10" style="padding:8px;" bindtap="goDetail" data-id="{{item.detailId}}" data-tid="{{item.objectId}}">
+          <view style="border:1px solid #5c307d;margin-top:10rpx;padding:8px;">
+            <view class="weui-media-box__title weui-media-box__title_in-text">{{item.title}}</view>
+            <view class="weui-media-box__info">
+              <view class="weui-media-box__info__meta">{{item.place}}</view>
+              <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{item.amount}}</view>
+              <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{item.cycle}}</view>
+            </view>
+            <view>
+              <template is="label" data="{{item}}" />
+            </view>
+            <view class="break-line"></view>
+            <view class="inline">
+              <image src="../../images/clock.png" class="time vertical-middle"></image>
+              <view class="inline fz-24 vertical-middle">{{item.time}}</view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>

@@ -1,0 +1,25 @@
+<import src="../template/template.wxml" />
+<view class="weui-panel">
+  <view class="weui-panel__bd">
+    <block wx:for="{{capital}}">
+        <view class="weui-media-box weui-media-box_text pb-10" style="padding:8px;" bindtap="goDetail" data-id="{{item.detailId}}">
+          <view style="border:1px solid #5c307d;margin-top:10rpx;padding:8px;">
+            <view class="weui-media-box__title weui-media-box__title_in-text">{{item.title}}</view>
+            <view class="weui-media-box__info">
+              <view class="weui-media-box__info__meta">{{item.place}}</view>
+              <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{item.amount}}</view>
+              <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{item.cycle}}</view>
+            </view>
+            <view>
+              <template is="label" data="{{item}}" />
+            </view>
+            <view class="break-line"></view>
+            <view class="inline">
+              <image src="../../images/clock.png" class="time vertical-middle"></image>
+              <view class="inline fz-24 vertical-middle">{{item.time}}</view>
+            </view>
+          </view>
+        </view>
+      </block>
+  </view>
+</view>

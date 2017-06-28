@@ -1,0 +1,108 @@
+<view class="xscroll_bar">
+  <view class="menu_item {{index==activeIndex?'active':''}}" style="width:{{itemWidth}};" wx:for="{{menus}}" bindtap="tabChange" data-index="{{index}}">
+    <view style="line-height:100rpx;" class="{{!(index==0 || index-1==activeIndex || index==activeIndex)?'menu_item_border':''}}">
+      <image style="vertical-align:middle;" class="menu-pic" src="{{item.pic}}"></image>
+      {{item.menu}}
+    </view>
+  </view>
+</view>
+<view style="height:110rpx">
+  <view class="weui-search-bar" style="height:95rpx;">
+    <view class="weui-search-bar__form">
+      <view class="weui-search-bar__box">
+        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+        <input type="text" confirm-type='search' class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputT" bindconfirm="inputTyping" />
+        <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+          <icon type="clear" size="14"></icon>
+        </view>
+      </view>
+      <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+        <icon class="weui-icon-search" type="search" size="14" style="margin-left: -8px;"></icon>
+        <view class="weui-search-bar__text" style="height:52rpx;line-height:52rpx;">搜索</view>
+      </label>
+    </view>
+    <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+  </view>
+</view>
+<view class="listFilterCon {{search=='1'?'block':''}}" style="width:750rpx;">
+  <view id="placeCon" class="con">
+    <block wx:for="{{newlist}}">
+      <view class="weui-media-box weui-media-box_text pb-10" style="padding:8px;" bindtap="goDetail" data-id="{{item.detailId}}" data-tid="{{item.id}}">
+        <view style="border:1px solid #5c307d;margin-top:10rpx;padding:8px;">
+          <view class="recruit-title">
+            <view class="weui-media-box__title weui-media-box__title_in-text w75">{{item.title}}</view>
+            <view class="salary">{{item.a}}</view>
+          </view>
+          <view class="weui-media-box__info m-t-0">
+            <view class="weui-media-box__info__meta">{{item.b}}</view>
+          </view>
+          <view>
+            <view class="label-view">{{item.c}}</view>
+            <view class="label-view">{{item.d}}</view>
+            <view class="label-view">{{item.e}}</view>
+          </view>
+          <view class="break-line"></view>
+          <view class="inline">
+            <image src="../../images/clock.png" class="time vertical-middle"></image>
+            <view class="inline fz-24 vertical-middle">{{item.time}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view style="height:250rpx;width:100%;" bindtap="hidePick"></view>
+</view>
+<view class="page">
+  <view class="weui-panel">
+    <scroll-view scroll-view scroll-y="true" style="height: {{deviceHeight-105}}px;" class="weui-panel__bd {{activeIndex=='0'?'block':'hidden'}}"bindscrolltolower="recruitMore">
+      <block wx:for="{{recruitList}}">
+        <view class="weui-media-box weui-media-box_text pb-10" style="padding:8px;" bindtap="goDetail" data-id="{{item.detailId}}">
+          <view style="border:1px solid #5c307d;margin-top:10rpx;padding:8px;">
+            <view class="recruit-title">
+              <view class="weui-media-box__title weui-media-box__title_in-text w75">{{item.title}}</view>
+              <view class="salary">{{item.salary}}</view>
+            </view>
+            <view class="weui-media-box__info m-t-0">
+              <view class="weui-media-box__info__meta">{{item.company}}</view>
+            </view>
+            <view>
+              <view class="label-view">{{item.exp}}</view>
+              <view class="label-view">{{item.edu}}</view>
+              <view class="label-view">{{item.place}}</view>
+            </view>
+            <view class="break-line"></view>
+            <view class="inline">
+              <image src="../../images/clock.png" class="time vertical-middle"></image>
+              <view class="inline fz-24 vertical-middle">{{item.time}}</view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+    <scroll-view scroll-view scroll-y="true" style="height: {{deviceHeight-105}}px;" class="weui-panel__bd {{activeIndex=='1'?'block':'hidden'}}"bindscrolltolower="candidateMore">
+      <block wx:for="{{candidateList}}">
+        <view class="weui-media-box weui-media-box_text pb-10" style="padding:8px;" bindtap="goDetail" data-id="{{item.detailId}}">
+          <view style="border:1px solid #5c307d;margin-top:10rpx;padding:8px;">
+            <view class="recruit-title">
+              <view class="weui-media-box__title weui-media-box__title_in-text">{{item.title}}</view>
+              <view class="salary">{{item.salary}}</view>
+            </view>
+            <view class="weui-media-box__info m-t-0">
+              <view class="weui-media-box__info__meta">{{item.place}}</view>
+            </view>
+            <view>
+              <view class="label-view">{{item.edu}}</view>
+              <view class="label-view">{{item.age}}</view>
+              <view class="label-view">{{item.sex}}</view>
+            </view>
+            <view class="break-line"></view>
+            <view class="inline">
+              <image src="../../images/clock.png" class="time vertical-middle"></image>
+              <view class="inline fz-24 vertical-middle">{{item.time}}</view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>

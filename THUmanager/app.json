@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "page/business/business",
+    "page/detail/detail",
+    "page/detail/comment",
+    "page/my/my",
+    "page/setting/setting",
+    "page/recruit/recruit",
+    "page/recruitDetail/recruitDetail",
+    "page/recruitDetail/comment",
+    "page/collection/collection",
+    "page/login/login",
+    "page/login/forget",
+    "page/register/register"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#5c307d",
+    "navigationBarTitleText": "资管人",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#5c307d",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "page/business/business",
+        "iconPath": "images/all.png",
+        "selectedIconPath": "images/selected-all.png",
+        "text": "业务"
+      },
+      {
+        "pagePath": "page/recruit/recruit",
+        "iconPath": "images/hire.png",
+        "selectedIconPath": "images/selected-hire.png",
+        "text": "公益"
+      },
+      {
+        "pagePath": "page/my/my",
+        "iconPath": "images/account.png",
+        "selectedIconPath": "images/selected-account.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

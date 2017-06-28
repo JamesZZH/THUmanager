@@ -1,0 +1,9 @@
+
+<!--page/detail/comment.wxml-->
+<view class="lineheight80">{{title}}</view>
+<form bindsubmit="bindFormSubmit">
+  <textarea placeholder="" type="primary" name="textarea" class="comment-area" />
+   <view class="main-button">
+    <button form-type="submit" type="default" class="main-color" formType="submit">提交</button>
+  </view>
+</form>
